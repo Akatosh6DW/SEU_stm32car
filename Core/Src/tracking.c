@@ -26,15 +26,16 @@ int16_t Get_Error(uint8_t sensor_state)
     int count = 0;
     
     // 左侧 (负分)
-    if (sensor_state & (1 << 7)) { error_sum -= 40; count++; }
-    if (sensor_state & (1 << 6)) { error_sum -= 30; count++; }
+   // if (sensor_state & (1 << 7)) { error_sum -= 40; count++; }
+    if (sensor_state & (1 << 7)) { error_sum -= 50; count++; }
+    if (sensor_state & (1 << 6)) { error_sum -= 40; count++; }
     if (sensor_state & (1 << 5)) { error_sum -= 20; count++; }
     if (sensor_state & (1 << 4)) { error_sum -= 10; count++; }
     // 右侧 (正分)
     if (sensor_state & (1 << 3)) { error_sum += 10; count++; }
     if (sensor_state & (1 << 2)) { error_sum += 20; count++; }
-    if (sensor_state & (1 << 1)) { error_sum += 30; count++; }
-    if (sensor_state & (1 << 0)) { error_sum += 40; count++; }
+    if (sensor_state & (1 << 1)) { error_sum += 40; count++; }
+    if (sensor_state & (1 << 0)) { error_sum += 50; count++; }
 
     if (count == 0) return Last_Error;
     return (int16_t)(error_sum / count);

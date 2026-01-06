@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "83",
+            "type": "stlinkgdbtarget",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "preBuild": "${command:st-stm32-ide-debug-launch.build}",
+            "runEntry": "main",
+            "imagesAndSymbols": [
+                {
+                    "imageFileName": "${workspaceFolder}/build/Debug/EXP83.elf"
+                }
+            ],
+            "verbose": false
+        }
+    ]
+}

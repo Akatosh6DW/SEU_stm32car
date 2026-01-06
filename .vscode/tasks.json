@@ -1,0 +1,13 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cmake",
+			"label": "CMake: 清理",
+			"command": "clean",
+			"preset": "Debug",
+			"problemMatcher": [],
+			"detail": "CMake 模板 清理 任务"
+		}
+	]
+}

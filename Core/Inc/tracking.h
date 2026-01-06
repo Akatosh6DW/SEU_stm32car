@@ -9,8 +9,8 @@
 
 // 循迹 PID (输出的是速度差)
 // 比如误差40，KP=0.5，则左右轮速度差 20cm/s (一个10，一个30)
-#define TRACK_KP           17.0f   // 建议 0.3 - 1.0
-#define TRACK_KD           0.3f   // 微分项，抑制震荡
+#define TRACK_KP           17.5f   // 建议 0.3 - 1.0
+#define TRACK_KD           0.2f   // 微分项，抑制震荡
 
 extern uint8_t sensor_value;
 

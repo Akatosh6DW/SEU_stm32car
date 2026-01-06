@@ -7,9 +7,9 @@
 // KP: 响应力度 (建议 5.0 - 20.0)
 // KI: 消除静态误差 (建议 0.5 - 2.0)
 // KD: 速度环通常为 0
-#define PID_KP  25.0f   
+#define PID_KP  35.0f   
 #define PID_KI  0.0f    
-#define PID_KD  0.0f    
+#define PID_KD  0.5f    
 
 // 限制
 #define PID_MAX_OUT  950.0f   // PWM 最大值

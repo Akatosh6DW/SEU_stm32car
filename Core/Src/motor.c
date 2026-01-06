@@ -46,14 +46,14 @@ void Motor_Stop(void)
     Motor_SetSpeed(MOTOR_RR, 0);
 }
 
-/**
- * @brief  设置单个电机的速度和方向
- * @param  motor_id: 电机ID (MOTOR_LF, MOTOR_LR, ...)
- * @param  speed: 速度值 (-1000 到 1000)
- * 正数: 正转
- * 负数: 反转
- * 0:    停止
- */
+// /**
+//  * @brief  设置单个电机的速度和方向
+//  * @param  motor_id: 电机ID (MOTOR_LF, MOTOR_LR, ...)
+//  * @param  speed: 速度值 (-1000 到 1000)
+//  * 正数: 正转
+//  * 负数: 反转
+//  * 0:    停止
+//  */
 
 void Motor_SetSpeed(Motor_ID_t motor_id, int16_t speed)
 {
@@ -76,8 +76,8 @@ void Motor_SetSpeed(Motor_ID_t motor_id, int16_t speed)
     {
     case MOTOR_LF: // 左前 (Left Front) - 保持原样
         htim = &htim1;
-        ch_a = TIM_CHANNEL_1;
-        ch_b = TIM_CHANNEL_2;
+        ch_a = TIM_CHANNEL_2;
+        ch_b = TIM_CHANNEL_1;
         Motor_Dir_L = temp_dir; 
         break;
 
@@ -85,15 +85,15 @@ void Motor_SetSpeed(Motor_ID_t motor_id, int16_t speed)
         htim = &htim1;
         // 原来是 ch_a=CH3, ch_b=CH4
         // 现在交换它们，实现软件反向
-        ch_a = TIM_CHANNEL_4; // <--- 交换
-        ch_b = TIM_CHANNEL_3; // <--- 交换
+        ch_a = TIM_CHANNEL_3; // <--- 交换
+        ch_b = TIM_CHANNEL_4; // <--- 交换
         Motor_Dir_L = temp_dir; 
         break;
 
     case MOTOR_RF: // 右前 (Right Front) - 保持原样
         htim = &htim4;
-        ch_a = TIM_CHANNEL_1; 
-        ch_b = TIM_CHANNEL_2;
+        ch_a = TIM_CHANNEL_2; 
+        ch_b = TIM_CHANNEL_1;
         Motor_Dir_R = temp_dir;
         break;
 
@@ -101,8 +101,8 @@ void Motor_SetSpeed(Motor_ID_t motor_id, int16_t speed)
         htim = &htim3;
         // 原来是 ch_a=CH3, ch_b=CH4
         // 现在交换它们，实现软件反向
-        ch_a = TIM_CHANNEL_4; // <--- 交换
-        ch_b = TIM_CHANNEL_3; // <--- 交换
+        ch_a = TIM_CHANNEL_3; // <--- 交换
+        ch_b = TIM_CHANNEL_4; // <--- 交换
         Motor_Dir_R = temp_dir; 
         break;
         
